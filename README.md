@@ -1,6 +1,6 @@
 # 🔐 Django Login System
 
-A secure authentication system built using Django and Django REST framework with user registration, password hashing, and REST API support.
+A secure authentication system built using Django and Django REST framework with user registration, password hashing, REST API support, and production-ready database integration using Neon.
 
 ---
 
@@ -12,6 +12,8 @@ A secure authentication system built using Django and Django REST framework with
 * ✅ Confirm Password Matching
 * ✅ Django Admin Panel
 * ✅ REST API Ready
+* ✅ SQLite for Local Development
+* ✅ Neon PostgreSQL for Production
 * ✅ Clean Project Structure
 
 ---
@@ -21,7 +23,8 @@ A secure authentication system built using Django and Django REST framework with
 * Python
 * Django
 * Django REST framework
-* SQLite
+* SQLite (Local Development)
+* Neon PostgreSQL (Production Database)
 * PBKDF2 Authentication
 
 ---
@@ -82,6 +85,34 @@ python3 manage.py runserver
 
 ---
 
+## ☁️ Production Database Setup (Neon)
+
+This project supports Neon for production deployments.
+
+### Why Neon?
+
+* Free PostgreSQL database
+* Works perfectly with Vercel
+* Scalable and serverless
+* Reliable for authentication systems
+* Better than SQLite for deployed apps
+
+### Environment Variable
+
+Add your database URL:
+
+```env id="x8v3m"
+DATABASE_URL=postgresql://username:password@host/dbname?sslmode=require
+```
+
+### Install PostgreSQL Driver
+
+```bash id="m3q7p"
+pip install psycopg2-binary dj-database-url
+```
+
+---
+
 ## 🔗 API Endpoints
 
 ### Register User
@@ -109,6 +140,7 @@ POST /api/register/
 * PBKDF2 + SHA256 hashing
 * Strong password validation
 * Duplicate username prevention
+* Production-ready PostgreSQL support
 
 ---
 
