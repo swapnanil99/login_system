@@ -15,15 +15,25 @@
       background: radial-gradient(circle at top, #4f46e5, #0f172a);
       color: white;
       margin: 0;
+      padding: 1rem;
     }
 
     .card {
       background: rgba(15, 23, 42, 0.95);
       padding: 2rem;
-      width: 360px;
+      width: 100%;
+      max-width: 420px;
       border-radius: 1.25rem;
       border: 1px solid rgba(148, 163, 184, 0.45);
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    .field {
+      margin-top: 1rem;
+    }
+
+    .field:first-of-type {
+      margin-top: 0;
     }
 
     h2 {
@@ -87,6 +97,16 @@
       color: #a855f7;
       text-decoration: none;
     }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 1.25rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
   </style>
 </head>
 
@@ -103,17 +123,25 @@
   <form method="post">
     {% csrf_token %}
 
-    <label>Username</label>
-    <input type="text" name="username" placeholder="Choose a username" required />
+    <div class="field">
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Choose a username" required />
+    </div>
 
-    <label style="margin-top: 1rem;">Email</label>
-    <input type="email" name="email" placeholder="you@example.com" />
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="you@example.com" />
+    </div>
 
-    <label style="margin-top: 1rem;">Password</label>
-    <input type="password" name="password" placeholder="Min 8 characters" required />
+    <div class="field">
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Min 8 characters" required />
+    </div>
 
-    <label style="margin-top: 1rem;">Confirm Password</label>
-    <input type="password" name="password2" placeholder="Re-enter password" required />
+    <div class="field">
+      <label>Confirm Password</label>
+      <input type="password" name="password2" placeholder="Re-enter password" required />
+    </div>
 
     {% if errors %}
     <ul style="color: red;">

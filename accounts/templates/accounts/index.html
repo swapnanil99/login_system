@@ -21,6 +21,7 @@
       justify-content: center;
       background: radial-gradient(circle at top, #4f46e5, #0f172a);
       color: #0f172a;
+      padding: 1rem;
     }
 
     /* ---------- LAYOUT ---------- */
@@ -45,6 +46,24 @@
     @media (max-width: 768px) {
       .auth-card {
         grid-template-columns: 1fr;
+        padding: 1.25rem;
+        gap: 1.25rem;
+      }
+
+      .auth-wrapper {
+        padding: 0.25rem;
+      }
+
+      .auth-right {
+        padding: 1rem;
+      }
+
+      .headline {
+        font-size: 1.35rem;
+      }
+
+      .form-footer-text {
+        flex-wrap: wrap;
       }
     }
 
